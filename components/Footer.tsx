@@ -43,7 +43,7 @@ export function Footer() {
                   rel="noopener noreferrer" 
                   className="hover:text-primary"
                 >
-                  Looma - Loom Downloader
+                  Looma
                 </a>
               </li>
               <li>
@@ -53,7 +53,7 @@ export function Footer() {
                   rel="noopener noreferrer" 
                   className="hover:text-primary"
                 >
-                  Download Vimeo
+                  DownloadVimeo
                 </a>
               </li>
               <li>
