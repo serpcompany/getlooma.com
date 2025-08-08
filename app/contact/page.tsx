@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteConfig } from "@/site.config";
 import { Mail, MessageSquare, Send } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h1 className="mb-4 text-4xl font-bold">Contact Us</h1>
             <p className="text-lg text-muted-foreground">
-              Have questions or feedback? We'd love to hear from you.
+              Have questions or feedback? We&apos;d love to hear from you.
             </p>
           </div>
 
@@ -50,7 +51,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle>Send us a message</CardTitle>
                 <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  Fill out the form below and we&apos;ll get back to you as soon as possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -166,10 +167,10 @@ export default function ContactPage() {
                   <CardTitle>Before You Contact Us</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 text-sm text-muted-foreground">
-                  <p>• Check our <a href="/blog" className="text-primary hover:underline">blog</a> for tutorials and guides</p>
-                  <p>• Review our <a href="/terms" className="text-primary hover:underline">Terms of Service</a></p>
-                  <p>• Read our <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a></p>
-                  <p>• For copyright issues, see our <a href="/dmca" className="text-primary hover:underline">DMCA Policy</a></p>
+                  <p>• Check our <Link href="/blog" className="text-primary hover:underline">blog</Link> for tutorials and guides</p>
+                  <p>• Review our <Link href="/terms" className="text-primary hover:underline">Terms of Service</Link></p>
+                  <p>• Read our <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link></p>
+                  <p>• For copyright issues, see our <Link href="/dmca" className="text-primary hover:underline">DMCA Policy</Link></p>
                 </CardContent>
               </Card>
             </div>

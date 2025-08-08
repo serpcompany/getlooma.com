@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Privacy Policy | ${siteConfig.name}`,
-  description: "Privacy Policy for Download Vimeo - Learn how we protect your data and privacy.",
+  description: `Privacy Policy for ${siteConfig.name} - Learn how we protect your data and privacy.`,
 };
 
 export default function PrivacyPage() {
@@ -83,14 +83,14 @@ export default function PrivacyPage() {
               <li>Data portability</li>
             </ul>
 
-            <h2>Children's Privacy</h2>
+            <h2>Children&apos;s Privacy</h2>
             <p>
               Our service is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, please contact us immediately.
             </p>
 
             <h2>Changes to This Policy</h2>
             <p>
-              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
             </p>
 
             <h2>Contact Us</h2>

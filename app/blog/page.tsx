@@ -6,12 +6,13 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User, ArrowRight, FileText } from 'lucide-react';
 import { format } from 'date-fns';
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/site.config';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: `Blog | ${siteConfig.name}`,
-  description: 'Read our latest articles about Vimeo downloading, video tips, and tutorials.',
+  description: 'Read our latest articles.',
 };
 
 export default function BlogPage() {
@@ -29,7 +30,7 @@ export default function BlogPage() {
                 Blog
               </h1>
               <p className="text-lg text-muted-foreground">
-                Tips, tutorials, and insights about downloading Vimeo videos and more
+                Tips, tutorials, and insights about downloading Loom videos and more
               </p>
             </div>
           </div>
@@ -50,11 +51,13 @@ export default function BlogPage() {
                   <Link key={post.slug} href={`/blog/${post.slug}`}>
                     <Card className="h-full transition-all hover:shadow-lg hover:-translate-y-1 overflow-hidden">
                       {post.image ? (
-                        <div className="aspect-video w-full overflow-hidden">
-                          <img
+                        <div className="aspect-video w-full overflow-hidden relative">
+                          <Image
                             src={post.image}
                             alt={post.title}
-                            className="h-full w-full object-cover"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           />
                         </div>
                       ) : (
@@ -64,7 +67,7 @@ export default function BlogPage() {
                               <FileText className="h-8 w-8 text-primary/60" />
                             </div>
                             <div className="flex flex-wrap gap-2 justify-center">
-                              {post.tags.slice(0, 2).map((tag) => (
+                              {post.tags.slice(0, 2).map((tag: string) => (
                                 <Badge key={tag} variant="secondary" className="text-xs">
                                   {tag}
                                 </Badge>
@@ -74,15 +77,6 @@ export default function BlogPage() {
                         </div>
                       )}
                       <CardHeader>
-                        {!post.image && (
-                          <div className="mb-2 flex flex-wrap gap-2">
-                            {post.tags.slice(0, 2).map((tag) => (
-                              <Badge key={tag} variant="secondary" className="text-xs">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        )}
                         <CardTitle className="line-clamp-2">{post.title}</CardTitle>
                         <CardDescription className="line-clamp-3">
                           {post.description}

@@ -1,25 +1,25 @@
 export const siteConfig = {
-  name: "Download Vimeo",
-  url: "https://downloadvimeo.com",
-  description: "Download Vimeo videos, audio, transcripts, mp4s, and more - on chrome, firefox, windows or mac.",
-  title: "Download Vimeo - Online Tools for Downloading Vimeo Videos, Audio, Transcripts & More",
+  name: "Looma",
+  url: "https://getlooma.com",
+  description: "Looma is how you download Loom videos, audio, transcripts, mp4s, and more - on chrome, firefox, windows or mac.",
+  title: "Looma - Online Tools for Downloading loom Videos, Audio, Transcripts & More",
   author: {
     name: "Mr Video Downloader",
-    email: "contact@downloadvimeo.com",
+    email: "contact@downloadloom.com",
   },
   social: {
     youtube: "https://youtube.com/",
     twitter: "https://twitter.com/",
   },
   categories: [
-    "Vimeo Downloaders",
+    "Downloaders",
   ],
   metadata: {
-    keywords: ["download vimeo", "vimeo downloader", "vimeo video download", "vimeo mp4", "vimeo audio download", "vimeo transcript", "vimeo to mp4", "download vimeo chrome", "download vimeo firefox", "vimeo download windows", "vimeo download mac", "online vimeo downloader", "free vimeo download"],
+    keywords: ["Looma", "loom downloader", "loom video download", "loom mp4", "loom audio download", "loom transcript", "loom to mp4", "Looma chrome", "Looma firefox", "loom download windows", "loom download mac", "online loom downloader", "free loom download"],
     openGraph: {
       type: "website",
       locale: "en_US",
-      siteName: "Download Vimeo",
+      siteName: "Looma",
     },
     twitter: {
       card: "summary_large_image",

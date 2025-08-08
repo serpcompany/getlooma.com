@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">{siteConfig.name}</h3>
             <p className="text-sm text-muted-foreground">
-              The best online tool to download Vimeo videos, audio, and transcripts.
+              {siteConfig.description}
             </p>
           </div>
           

@@ -17,17 +17,12 @@ import {
   Globe,
   CheckCircle,
   ArrowRight,
-  Play,
-  Volume2,
-  FileDown,
   Chrome,
   Monitor,
   Smartphone,
-  Clock,
   Star
 } from "lucide-react";
 import Link from "next/link";
-import { siteConfig } from "@/site.config";
 
 export default function HomePage() {
   const [videoUrl, setVideoUrl] = useState("");
@@ -44,12 +39,12 @@ export default function HomePage() {
     {
       icon: FileVideo,
       title: "HD Video Downloads",
-      description: "Download Vimeo videos in multiple resolutions including 1080p, 720p, 480p, and more."
+      description: "Download Loom videos in multiple resolutions including 1080p, 720p, 480p, and more."
     },
     {
       icon: FileAudio,
       title: "Audio Extraction",
-      description: "Extract high-quality audio from Vimeo videos in MP3 or other audio formats."
+      description: "Extract high-quality audio from Loom videos in MP3 or other audio formats."
     },
     {
       icon: FileText,
@@ -64,7 +59,7 @@ export default function HomePage() {
     {
       icon: Shield,
       title: "Safe & Secure",
-      description: "No registration required. Your privacy is our priority."
+      description: "Your privacy is our priority."
     },
     {
       icon: Globe,
@@ -76,8 +71,8 @@ export default function HomePage() {
   const steps = [
     {
       number: "1",
-      title: "Copy Vimeo URL",
-      description: "Go to Vimeo and copy the URL of the video you want to download."
+      title: "Copy Loom URL",
+      description: "Go to Loom and copy the URL of the video you want to download."
     },
     {
       number: "2",
@@ -96,30 +91,31 @@ export default function HomePage() {
     }
   ];
 
+  // FAQs based on Google's People Also Ask for "Loom video download"
   const faqs = [
     {
-      question: "How do I download Vimeo videos?",
-      answer: "Simply paste the Vimeo URL into our downloader and click the download button."
+      question: "Can you download Loom videos as MP4?",
+      answer: "Yes, Looma allows you to download Loom videos in MP4 format, which is compatible with all devices and video players. Simply paste the Loom link and select MP4 as your preferred format."
     },
     {
-      question: "Do I need to install any software?",
-      answer: "No, our tool works directly in your browser. No software installation required."
+      question: "How do I download someone else&apos;s Loom video?",
+      answer: "You can download any publicly shared Loom video by copying its URL and pasting it into our downloader. Note that private or password-protected videos require proper access permissions."
     },
     {
-      question: "What video formats are supported?",
-      answer: "We support MP4, WebM, and other popular video formats, as well as MP3 for audio."
+      question: "Can viewers download my Loom videos?",
+      answer: "If your Loom video is publicly accessible, viewers may be able to download it using third-party tools. To prevent downloads, use Loom&apos;s privacy settings to restrict access or disable download permissions."
     },
     {
-      question: "Is there a limit on downloads?",
-      answer: "No, you can download as many videos as you need without any restrictions."
+      question: "Is there a way to save Loom videos offline?",
+      answer: "Yes, our tool lets you save Loom videos for offline viewing. Download the video in MP4 format to your device, and you can watch it anytime without an internet connection."
     },
     {
-      question: "Can I download private Vimeo videos?",
-      answer: "Our tool can only download publicly available videos due to privacy and copyright restrictions."
+      question: "Can I download Loom videos without an account?",
+      answer: "Absolutely! Looma doesn&apos;t require any account or registration. Just paste the Loom video URL and download instantly - no sign-up needed."
     },
     {
-      question: "Does it work on mobile devices?",
-      answer: "Yes, our downloader works on all devices including smartphones and tablets."
+      question: "How do I extract audio from a Loom video?",
+      answer: "Our tool can extract audio from Loom videos and save it as MP3. This is perfect for podcasts, lectures, or when you only need the audio content."
     }
   ];
 
@@ -134,14 +130,13 @@ export default function HomePage() {
             <div className="mx-auto max-w-4xl text-center">
               <Badge className="mb-4" variant="secondary">
                 <Zap className="mr-1 h-3 w-3" />
-                Fast Vimeo Downloader
+                Fast Loom Downloader
               </Badge>
               <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                Download Vimeo Videos
-                <span className="block text-primary">In Seconds</span>
+                Get Looma
               </h1>
               <p className="mb-10 text-lg text-muted-foreground md:text-xl">
-                Download Vimeo videos, audio, and transcripts instantly. No registration required.
+                Download Loom videos, audio, and transcripts easily.
                 Works on all devices and browsers.
               </p>
               
@@ -150,7 +145,7 @@ export default function HomePage() {
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <Input
                     type="url"
-                    placeholder="Paste Vimeo video URL here..."
+                    placeholder="Paste Loom video URL here..."
                     className="flex-1 px-6 py-6 text-base"
                     value={videoUrl}
                     onChange={(e) => setVideoUrl(e.target.value)}
@@ -172,7 +167,7 @@ export default function HomePage() {
                   </Button>
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Example: https://vimeo.com/123456789
+                  Example: https://www.loom.com/share/...
                 </p>
               </div>
 
@@ -203,10 +198,10 @@ export default function HomePage() {
         <section className="container py-20 md:py-28">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Everything You Need to Download Vimeo Content
+              Everything You Need to Download Loom Content
             </h2>
             <p className="mb-12 text-lg text-muted-foreground">
-              Our powerful downloader supports all types of Vimeo content with advanced features.
+              Our powerful downloader supports all types of Loom content with advanced features.
             </p>
           </div>
 
@@ -235,10 +230,10 @@ export default function HomePage() {
           <div className="container py-20 md:py-28">
             <div className="mx-auto max-w-4xl text-center">
               <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                How to Download Vimeo Videos
+                How to Download Loom Videos
               </h2>
               <p className="mb-12 text-lg text-muted-foreground">
-                Download any Vimeo video in 4 simple steps
+                Download any Loom video in 4 simple steps
               </p>
             </div>
 
@@ -266,7 +261,7 @@ export default function HomePage() {
               Works on All Platforms
             </h2>
             <p className="mb-12 text-lg text-muted-foreground">
-              Download Vimeo videos from any device or browser
+              Download Loom videos from any device or browser
             </p>
 
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4">

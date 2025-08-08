@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Terms of Service | ${siteConfig.name}`,
-  description: "Terms of Service for Download Vimeo - Understand your rights and responsibilities when using our service.",
+  description: `Terms of Service for ${siteConfig.name} - Understand your rights and responsibilities when using our service.`,
 };
 
 export default function TermsPage() {
@@ -23,12 +23,12 @@ export default function TermsPage() {
 
             <h2>1. Acceptance of Terms</h2>
             <p>
-              By accessing and using {siteConfig.name} ("the Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.
+              By accessing and using {siteConfig.name} (&quot;the Service&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Service.
             </p>
 
             <h2>2. Description of Service</h2>
             <p>
-              {siteConfig.name} provides tools to download publicly available videos from Vimeo. The Service is provided "as is" and "as available" without warranties of any kind.
+              {siteConfig.name} provides tools to download publicly available videos from Loom. The Service is provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind.
             </p>
 
             <h2>3. Use of Service</h2>
@@ -36,8 +36,8 @@ export default function TermsPage() {
             <ul>
               <li>Use the Service only for lawful purposes</li>
               <li>Respect copyright and intellectual property rights</li>
-              <li>Not download videos you don't have permission to access</li>
-              <li>Not use the Service to violate Vimeo's Terms of Service</li>
+              <li>Not download videos you don&apos;t have permission to access</li>
+              <li>Not use the Service to violate Loom&apos;s Terms of Service</li>
               <li>Not attempt to circumvent any security measures</li>
               <li>Not use automated scripts or bots without permission</li>
             </ul>
@@ -52,7 +52,7 @@ export default function TermsPage() {
             <ul>
               <li>Obtaining necessary permissions before downloading content</li>
               <li>Complying with all applicable laws and regulations</li>
-              <li>Respecting content creators' rights</li>
+              <li>Respecting content creators&apos; rights</li>
               <li>Using downloaded content only for permitted purposes</li>
             </ul>
 
@@ -64,13 +64,13 @@ export default function TermsPage() {
               <li>Violate any laws or regulations</li>
               <li>Harm or exploit minors</li>
               <li>Transmit malware or harmful code</li>
-              <li>Interfere with the Service's operation</li>
+              <li>Interfere with the Service&apos;s operation</li>
               <li>Attempt to gain unauthorized access</li>
             </ul>
 
             <h2>7. Disclaimer of Warranties</h2>
             <p>
-              THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.
+              THE SERVICE IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.
             </p>
 
             <h2>8. Limitation of Liability</h2>
@@ -105,7 +105,7 @@ export default function TermsPage() {
 
             <h2>14. Changes to Terms</h2>
             <p>
-              We reserve the right to update these Terms at any time. We will notify you of any changes by posting the new Terms on this page and updating the "Last updated" date.
+              We reserve the right to update these Terms at any time. We will notify you of any changes by posting the new Terms on this page and updating the &quot;Last updated&quot; date.
             </p>
 
             <h2>15. Contact Information</h2>

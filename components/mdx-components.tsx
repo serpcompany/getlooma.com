@@ -1,4 +1,4 @@
-import type { MDXComponents } from 'mdx/types';
+type MDXComponents = Record<string, React.ComponentType<any>>;
 import Image from 'next/image';
 import Link from 'next/link';
 
