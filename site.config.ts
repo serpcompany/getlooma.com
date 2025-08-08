@@ -26,6 +26,10 @@ export const siteConfig = {
       creator: "@",
     },
   },
+  // Analytics Configuration
+  analytics: {
+    gtmId: "GTM-57L458CF", // Google Tag Manager ID
+  },
 } as const;
 
 export type SiteConfig = typeof siteConfig;

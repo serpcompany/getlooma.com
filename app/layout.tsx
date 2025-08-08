@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/site.config";
+import { GoogleTagManager, GoogleTagManagerNoscript } from "@/components/GoogleTagManager";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,9 +37,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Get GTM ID from site config
+  const gtmId = siteConfig.analytics?.gtmId || '';
+
   return (
     <html lang="en">
+      <head>
+        <GoogleTagManager gtmId={gtmId} />
+      </head>
       <body className={`${inter.className} antialiased`}>
+        <GoogleTagManagerNoscript gtmId={gtmId} />
         {children}
       </body>
     </html>
