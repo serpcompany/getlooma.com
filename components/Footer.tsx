@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-muted/30">
       <div className="container py-12">
-        <div className="grid gap-8 md:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-5">
           <div>
             <h3 className="mb-4 text-lg font-semibold">{siteConfig.name}</h3>
             <p className="text-sm text-muted-foreground">
@@ -30,6 +30,42 @@ export function Footer() {
               <li>Mac</li>
               <li>Linux</li>
               <li>Mobile</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="mb-4 text-sm font-semibold">More Tools</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>
+                <a 
+                  href="https://getlooma.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-primary"
+                >
+                  Looma - Loom Downloader
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://downloadvimeo.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-primary"
+                >
+                  Download Vimeo
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://serpdownloaders.github.io" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-primary"
+                >
+                  SERP Downloaders
+                </a>
+              </li>
             </ul>
           </div>
           
