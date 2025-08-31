@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: "Looma",
+  name: "Looma | Loom Video Downloader",
   url: "https://getlooma.com",
-  description: "Looma is how you download Loom videos, audio, transcripts, mp4s, and more - on chrome, firefox, windows or mac.",
-  title: "Looma - Online Tools for Downloading loom Videos, Audio, Transcripts & More",
+  description: "Looma - the Loom Video Downloader | Looma is how you download Loom videos, audio, transcripts, mp4s, and more - on chrome, firefox, windows or mac.",
+  title: "Looma - the Loom Video Downloader | Online Tools for Downloading loom Videos, Audio, Transcripts & More",
   author: {
     name: "Mr Video Downloader",
-    email: "contact@downloadloom.com",
+    email: "contact@getlooma.com",
   },
   social: {
-    youtube: "https://youtube.com/",
+    youtube: "https://youtube.com/@serpapps",
     twitter: "https://twitter.com/",
   },
   categories: [
