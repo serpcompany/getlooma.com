@@ -1,12 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import { 
   Download,
   FileVideo,
@@ -23,17 +19,14 @@ import {
   Star
 } from "lucide-react";
 import Link from "next/link";
+import { DownloadForm } from "@/components/DownloadForm";
+import { getAllPosts } from "@/lib/blog";
+import Image from "next/image";
+import { Calendar, Clock, User, FileText as FileTextIcon, ArrowRight as ArrowRightIcon } from "lucide-react";
+import { format } from "date-fns";
 
 export default function HomePage() {
-  const [videoUrl, setVideoUrl] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleDownload = async () => {
-    if (!videoUrl) return;
-    setIsLoading(true);
-    // TODO: Implement download logic
-    setTimeout(() => setIsLoading(false), 2000);
-  };
+  const posts = getAllPosts().slice(0, 3);
 
   const features = [
     {
@@ -141,35 +134,7 @@ export default function HomePage() {
               </p>
               
               {/* Download Form */}
-              <div className="mx-auto max-w-2xl">
-                <div className="flex flex-col gap-4 sm:flex-row">
-                  <Input
-                    type="url"
-                    placeholder="Paste Loom video URL here..."
-                    className="flex-1 px-6 py-6 text-base"
-                    value={videoUrl}
-                    onChange={(e) => setVideoUrl(e.target.value)}
-                  />
-                  <Button 
-                    size="lg" 
-                    className="px-8 py-6 text-base font-semibold"
-                    onClick={handleDownload}
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <>Processing...</>
-                    ) : (
-                      <>
-                        <Download className="mr-2 h-5 w-5" />
-                        Download Video
-                      </>
-                    )}
-                  </Button>
-                </div>
-                <p className="mt-4 text-sm text-muted-foreground">
-                  Example: https://www.loom.com/share/...
-                </p>
-              </div>
+              <DownloadForm />
 
               {/* Trust Indicators */}
               <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
@@ -191,6 +156,90 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Recent Blog Posts */}
+        <section className="container py-16 md:py-24">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-8 flex items-end justify-between">
+              <div>
+                <h2 className="text-3xl font-bold md:text-4xl">Recent Blog Posts</h2>
+                <p className="text-muted-foreground">Latest tips and tutorials</p>
+              </div>
+              <Button variant="ghost" asChild>
+                <Link href="/blog">
+                  View all
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            {posts.length === 0 ? (
+              <p className="text-muted-foreground">No posts yet.</p>
+            ) : (
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {posts.map((post) => (
+                  <Link key={post.slug} href={`/blog/${post.slug}`}>
+                    <Card className="h-full transition-all hover:shadow-lg hover:-translate-y-1 overflow-hidden">
+                      {post.image ? (
+                        <div className="aspect-video w-full overflow-hidden relative">
+                          <Image
+                            src={post.image}
+                            alt={post.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                        </div>
+                      ) : (
+                        <div className="aspect-video w-full bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                          <div className="text-center p-6">
+                            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
+                              <FileTextIcon className="h-8 w-8 text-primary/60" />
+                            </div>
+                            <div className="flex flex-wrap gap-2 justify-center">
+                              {post.tags.slice(0, 2).map((tag: string) => (
+                                <Badge key={tag} variant="secondary" className="text-xs">
+                                  {tag}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      <CardHeader>
+                        <CardTitle className="line-clamp-2">{post.title}</CardTitle>
+                        <CardDescription className="line-clamp-3">
+                          {post.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+                          <div className="flex items-center gap-1">
+                            <User className="h-3 w-3" />
+                            <span>{post.author}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            <time dateTime={post.date}>
+                              {format(new Date(post.date), 'MMM d, yyyy')}
+                            </time>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
+                            <span>{post.readingTime}</span>
+                          </div>
+                        </div>
+                        <div className="mt-4 flex items-center text-sm font-medium text-primary">
+                          Read more
+                          <ArrowRightIcon className="ml-1 h-4 w-4" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
