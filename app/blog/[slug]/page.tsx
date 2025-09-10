@@ -26,14 +26,25 @@ const components = {
   p: ({ children }: any) => (
     <p className="mb-4 leading-7">{children}</p>
   ),
-  a: ({ href, children }: any) => (
-    <Link
-      href={href as string}
-      className="font-medium text-primary underline underline-offset-4 hover:no-underline"
-    >
-      {children}
-    </Link>
-  ),
+  a: (props: any) => {
+    const { href = '', children, ...rest } = props || {};
+    const isExternal = typeof href === 'string' && /^(https?:)?\/\//.test(href);
+    const className = "font-medium text-primary underline underline-offset-4 hover:no-underline";
+    if (isExternal) {
+      const rel = rest.rel || 'noopener noreferrer';
+      const target = rest.target || '_blank';
+      return (
+        <a href={href} className={className} rel={rel} target={target} {...rest}>
+          {children}
+        </a>
+      );
+    }
+    return (
+      <Link href={href as string} className={className} {...rest}>
+        {children}
+      </Link>
+    );
+  },
   ul: ({ children }: any) => (
     <ul className="mb-4 ml-6 list-disc space-y-2">{children}</ul>
   ),
@@ -123,6 +134,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  // Try to enable GFM (tables, strikethrough, etc.) if available
+  const remarkPlugins: any[] = [];
+  try {
+    const mod: any = await import('remark-gfm');
+    remarkPlugins.push(mod.default ?? mod);
+  } catch (e) {
+    // Plugin not installed; continue without it
+  }
 
   if (!post) {
     notFound();
@@ -222,7 +241,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
           {/* Post Content */}
           <div className="prose prose-gray max-w-none dark:prose-invert">
-            <MDXRemote source={post.content} components={components} />
+            <MDXRemote
+              source={post.content}
+              components={components}
+              options={{ mdxOptions: { remarkPlugins } }}
+            />
           </div>
 
           {/* Post Footer */}

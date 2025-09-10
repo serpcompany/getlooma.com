@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Looma | Loom Video Downloader",
+  name: "Looma",
   url: "https://getlooma.com",
   description: "Looma - the Loom Video Downloader | Looma is how you download Loom videos, audio, transcripts, mp4s, and more - on chrome, firefox, windows or mac.",
   title: "Looma - the Loom Video Downloader | Online Tools for Downloading loom Videos, Audio, Transcripts & More",
   author: {
-    name: "Mr Video Downloader",
+    name: "Mr Looma",
     email: "contact@getlooma.com",
   },
   social: {
